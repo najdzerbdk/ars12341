@@ -71,7 +71,7 @@ const params = new URLSearchParams(window.location.search);
 const token = params.get("token");
 
 if (!token) {
-  statusEl.innerHTML = '<span class="fail">Brak tokenu w linku!</span>';
+  window.location.href = "gen.html";
 } else {
   const tokenRef = ref(db, "tokens/" + token);
   get(tokenRef).then(snapshot => {
